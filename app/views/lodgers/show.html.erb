@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lodger.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lodger.phone %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @lodger.sex %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @lodger.cpf %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <%= @lodger.rg %>
+</p>
+
+<p>
+  <strong>Maritalstatus:</strong>
+  <%= @lodger.maritalstatus %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @lodger.occupation %>
+</p>
+<p>
+  <strong>Street:</strong>
+  <%= @lodger.address.street%>
+</p>
+<p>
+  <strong>ZIP:</strong>
+  <%= @lodger.address.zip%>
+</p>
+<p>
+  <strong>Number:</strong>
+  <%= @lodger.address.number%>
+</p>
+
+<%= link_to 'Edit', edit_lodger_path(@lodger) %> |
+<%= link_to 'Back', lodgers_path %>

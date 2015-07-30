@@ -1,0 +1,61 @@
+<%= form_for(@lodger) do |f| %>
+  <% if @lodger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lodger.errors.count, "error") %> prohibited this lodger from being saved:</h2>
+
+      <ul>
+      <% @lodger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg %>
+  </div>
+  <div class="field">
+    <%= f.label :maritalstatus %><br>
+    <%= f.text_field :maritalstatus %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <%= f.fields_for :address  do |a|%>
+  <div class="field"> 
+    <%= a.label :street %> <br>
+    <%= a.text_field :street %>
+  </div> 
+  <div class="field">
+    <%= a.label :number %><br>
+    <%= a.text_field :number %>
+  </div>
+  <div class="field">
+    <%= a.label :zip %><br>
+    <%= a.text_field :zip %>
+   </div> 
+  <%end%>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
