@@ -12,18 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :typehouse %><br>
+    <%= f.text_field :typehouse %>
   </div>
   <div class="field">
     <%= f.label :compartment %><br>
     <%= f.number_field :compartment %>
   </div>
-  <%= f.fields_for :address  do |a|%>
+    <div class="field">
+    <%= f.label :status %><br>
+    <%=f.select( "status", %w(Alugado Livre), { include_blank: "Selecione" })%>
+  </div>
+    <%= f.fields_for :address  do |a|%>
   <div class="field"> 
-    <%= a.label :street %> <br>
+    <%= a.label :street %><br>
     <%= a.text_field :street %>
-   </div>
+  </div> 
   <div class="field">
     <%= a.label :number %><br>
     <%= a.text_field :number %>
@@ -31,9 +35,12 @@
   <div class="field">
     <%= a.label :zip %><br>
     <%= a.text_field :zip %>
-  </div> 
+   </div> 
   <%end%>
-
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

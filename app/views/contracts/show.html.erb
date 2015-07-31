@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Monthlypayment:</strong>
+  <%= @contract.monthlyPayment %>
+</p>
+
+<p>
+  <strong>Bail:</strong>
+  <%= @contract.bail %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @contract.startDate %>
+</p>
+
+<p>
+  <strong>Finaldate:</strong>
+  <%= @contract.finalDate %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @contract.house %>
+</p>
+
+<p>
+  <strong>Lodger:</strong>
+  <%= @contract.lodger %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @contract.obs %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

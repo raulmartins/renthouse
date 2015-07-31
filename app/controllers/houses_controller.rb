@@ -4,7 +4,11 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    if (params[:search])
+      @houses = House.search(params[:search])
+    else
+      @houses = House.all
+    end
   end
 
   # GET /houses/1
@@ -70,6 +74,6 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:type, :compartment, :address_attributes => {:street, :zip, :number})
+      params.require(:house).permit(:typehouse, :compartment,:obs,:status, :address_attributes => [:street, :zip, :number])
     end
 end

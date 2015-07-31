@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :contracts
+  resources :houses
+  resources :houses
+  resources :houses
   resources :houses
   root 'welcome#index'
   #get 'welcome/index'

@@ -18,7 +18,7 @@ class HousesControllerTest < ActionController::TestCase
 
   test "should create house" do
     assert_difference('House.count') do
-      post :create, house: { compartment: @house.compartment, type: @house.type }
+      post :create, house: { compartment: @house.compartment, typehouse: @house.typehouse }
     end
 
     assert_redirected_to house_path(assigns(:house))
@@ -35,7 +35,7 @@ class HousesControllerTest < ActionController::TestCase
   end
 
   test "should update house" do
-    patch :update, id: @house, house: { compartment: @house.compartment, type: @house.type }
+    patch :update, id: @house, house: { compartment: @house.compartment, typehouse: @house.typehouse }
     assert_redirected_to house_path(assigns(:house))
   end
 

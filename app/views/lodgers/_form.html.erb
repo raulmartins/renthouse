@@ -21,7 +21,9 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.text_field :sex %>
+    <%=f.select( :sex, options_for_select([%w(Masculino M), %w(Feminino F)], @lodger.sex), 
+    { include_blank: "Selecione" })
+    %>
   </div>
   <div class="field">
     <%= f.label :cpf %><br>
@@ -33,7 +35,9 @@
   </div>
   <div class="field">
     <%= f.label :maritalstatus %><br>
-    <%= f.text_field :maritalstatus %>
+    <%=f.select( :maritalstatus, %w(Casado Solteiro Viúvo Divorciado Separado), 
+    { include_blank: "Selecione" })
+    %>
   </div>
   <div class="field">
     <%= f.label :occupation %><br>

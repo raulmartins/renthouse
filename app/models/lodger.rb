@@ -1,6 +1,6 @@
 class Lodger < ActiveRecord::Base
 	has_one :address
-
+	has_one :contract
 	accepts_nested_attributes_for :address
 
 	validates :name, presence: true

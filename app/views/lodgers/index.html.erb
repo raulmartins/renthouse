@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Listing Lodgers</h1>
 <%= form_tag(lodgers_path, method: :get) do%>
 <%= text_field_tag 'search', nil, placeholder: 'Enter search term...'%>
 <%=submit_tag "Search"%>
- 
  <% end%>
-
-
-<h1>Listing Lodgers</h1>
-
 <table>
   <thead>
     <tr>
@@ -44,3 +39,4 @@
 <br>
 
 <%= link_to 'New Lodger', new_lodger_path %>
+<%= link_to 'Back', root_path %>
