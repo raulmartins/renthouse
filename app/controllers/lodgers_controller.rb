@@ -15,25 +15,32 @@ class LodgersController < ApplicationController
   # GET /lodgers/1
   # GET /lodgers/1.json
   def show
+    @users = User.all
+    authorize @users
   end
 
   # GET /lodgers/new
   def new
+    @users = User.all
+    authorize @users
+
     @lodger = Lodger.new
     @lodger.build_address
-    
   end
 
   # GET /lodgers/1/edit
   def edit
-
+    @users = User.all
+    authorize @users
   end
 
   # POST /lodgers
   # POST /lodgers.json
   def create
-    @lodger = Lodger.new(lodger_params)
+    @users = User.all
+    authorize @users
 
+    @lodger = Lodger.new(lodger_params)
     respond_to do |format|
       if @lodger.save
         format.html { redirect_to @lodger, notice: 'Lodger was successfully created.' }
@@ -48,6 +55,9 @@ class LodgersController < ApplicationController
   # PATCH/PUT /lodgers/1
   # PATCH/PUT /lodgers/1.json
   def update
+    @users = User.all
+    authorize @users
+
     respond_to do |format|
       if @lodger.update(lodger_params)
         format.html { redirect_to @lodger, notice: 'Lodger was successfully updated.' }
@@ -62,6 +72,9 @@ class LodgersController < ApplicationController
   # DELETE /lodgers/1
   # DELETE /lodgers/1.json
   def destroy
+    @users = User.all
+    authorize @users
+
     @lodger.destroy
     respond_to do |format|
       format.html { redirect_to lodgers_url, notice: 'Lodger was successfully destroyed.' }

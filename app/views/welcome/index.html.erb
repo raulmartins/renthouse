@@ -1,17 +1,25 @@
+<p id="notice"><%= notice %></p>
 <h1>Welcome</h1>
-
-<%if user_signed_in?%>
-	<ul>
-		<li><%=current_user.email%></li>
-		<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
-	</ul>
+<%if user_signed_in?%>		
+		<ul>
+			<li><%=current_user.admin?%></li>
+			<li><%=current_user.email%></li>
+			<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+		</ul>
+			<p><%=link_to 'Register Lodger', lodgers_path %></p>
+			<p><%=link_to 'Register House', houses_path %></p>
+			<p><%= link_to 'Register Contract', contracts_path %></p>
+			<p><%= link_to 'Users', control_users_index_path %></p>
 <%else%>
 	<ul>
 		<li><%=link_to "Register User", new_user_registration_path%></li>
-		<li><%=link_to "Login", new_user_session_path%></li>
+		<li><%=link_to "Login", user_session_path%></li>
+		
 	</ul>
-<%end%>
-<p><%=link_to 'Register Lodger', lodgers_path %></p>
-<p><%=link_to 'Register House', houses_path %></p>
-<p><%= link_to 'Register Contract', contracts_path %></p>
+	<p><%=link_to 'Register Lodger', lodgers_path %></p>
+	<p><%=link_to 'Register House', houses_path %></p>
+	<p><%= link_to 'Register Contract', contracts_path %></p>
+	<p><%= link_to 'Users', control_users_index_path %></p>
 
+	
+<%end%>
