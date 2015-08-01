@@ -1,6 +1,6 @@
 class LodgersController < ApplicationController
   before_action :set_lodger, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /lodgers
   # GET /lodgers.json
   def index

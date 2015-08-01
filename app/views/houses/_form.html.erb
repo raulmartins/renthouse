@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :typehouse %><br>
-    <%= f.text_field :typehouse %>
+    <%=f.select( :typehouse, %w( Casa Apartamento Quarto Loja ), { include_blank: "Selecione" })%>
   </div>
   <div class="field">
     <%= f.label :compartment %><br>
@@ -21,7 +21,7 @@
   </div>
     <div class="field">
     <%= f.label :status %><br>
-    <%=f.select( "status", %w(Alugado Livre), { include_blank: "Selecione" })%>
+    <%=f.select( :status, %w(Alugado Livre), { include_blank: "Selecione" })%>
   </div>
     <%= f.fields_for :address  do |a|%>
   <div class="field"> 

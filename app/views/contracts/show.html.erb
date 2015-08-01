@@ -11,23 +11,23 @@
 </p>
 
 <p>
-  <strong>Startdate:</strong>
+  <strong>Start Date:</strong>
   <%= @contract.startDate %>
 </p>
 
 <p>
-  <strong>Finaldate:</strong>
+  <strong>Final Date:</strong>
   <%= @contract.finalDate %>
 </p>
 
 <p>
   <strong>House:</strong>
-  <%= @contract.house %>
+  <%= @contract.house.address.street %>
 </p>
 
 <p>
   <strong>Lodger:</strong>
-  <%= @contract.lodger %>
+  <%= @contract.lodger.name %>
 </p>
 
 <p>

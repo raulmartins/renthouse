@@ -8,4 +8,9 @@ class Contract < ActiveRecord::Base
   validates :finalDate, presence: true
   validates :house, presence: true
   validates :lodger, presence: true
+
+  def self.search(query)
+		where("Contract like ?", "%#{query}")
+	end
+
 end

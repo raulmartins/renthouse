@@ -29,8 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :house_id %><br>
-    <%= f.text_field :house_id %>
-    <%= f.collection_select(:house_id, House.all, :id, House.street, prompt: true) %>
+    <%= f.select :house_id, 
+                  House.all.collect {|x| [x.address.street, x.id]},
+                 { include_blank: "Please select"}
+    %>
+    
   </div>
   <div class="field">
     <%= f.label :lodger_id %><br>
