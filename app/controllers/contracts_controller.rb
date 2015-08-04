@@ -1,6 +1,7 @@
 class ContractsController < ApplicationController
   before_action :set_contract, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  
   # GET /contracts
   # GET /contracts.json
   def index
@@ -10,10 +11,13 @@ class ContractsController < ApplicationController
   # GET /contracts/1
   # GET /contracts/1.json
   def show
+
   end
 
   # GET /contracts/new
   def new
+    @users = User.all
+    authorize @users
     @contract = Contract.new
     @contract.build_house
     @contract.build_lodger
@@ -21,11 +25,15 @@ class ContractsController < ApplicationController
 
   # GET /contracts/1/edit
   def edit
+    @users = User.all
+    authorize @users
   end
 
   # POST /contracts
   # POST /contracts.json
   def create
+    @users = User.all
+    authorize @users
     @contract = Contract.new(contract_params)
 
     respond_to do |format|
@@ -42,6 +50,8 @@ class ContractsController < ApplicationController
   # PATCH/PUT /contracts/1
   # PATCH/PUT /contracts/1.json
   def update
+    @users = User.all
+    authorize @users
     respond_to do |format|
       if @contract.update(contract_params)
         format.html { redirect_to @contract, notice: 'Contract was successfully updated.' }
@@ -56,6 +66,8 @@ class ContractsController < ApplicationController
   # DELETE /contracts/1
   # DELETE /contracts/1.json
   def destroy
+    @users = User.all
+    authorize @users
     @contract.destroy
     respond_to do |format|
       format.html { redirect_to contracts_url, notice: 'Contract was successfully destroyed.' }

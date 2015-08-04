@@ -18,17 +18,23 @@ class HousesController < ApplicationController
 
   # GET /houses/new
   def new
+    @users = User.all
+    authorize @users
     @house = House.new
     @house.build_address
   end
 
   # GET /houses/1/edit
   def edit
+    @users = User.all
+    authorize @users
   end
 
   # POST /houses
   # POST /houses.json
   def create
+    @users = User.all
+    authorize @users
     @house = House.new(house_params)
 
     respond_to do |format|
@@ -45,6 +51,8 @@ class HousesController < ApplicationController
   # PATCH/PUT /houses/1
   # PATCH/PUT /houses/1.json
   def update
+    @users = User.all
+    authorize @users
     respond_to do |format|
       if @house.update(house_params)
         format.html { redirect_to @house, notice: 'House was successfully updated.' }
@@ -59,6 +67,8 @@ class HousesController < ApplicationController
   # DELETE /houses/1
   # DELETE /houses/1.json
   def destroy
+    @users = User.all
+    authorize @users
     @house.destroy
     respond_to do |format|
       format.html { redirect_to houses_url, notice: 'House was successfully destroyed.' }

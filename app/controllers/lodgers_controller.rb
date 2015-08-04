@@ -1,11 +1,12 @@
 class LodgersController < ApplicationController
   before_action :set_lodger, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
   # GET /lodgers
   # GET /lodgers.json
   def index
+
     if (params[:search])
-    #@lodgers = Lodger.search(params[:search])
     @lodgers = Lodger.search(params[:search])
     else
       @lodgers = Lodger.all
@@ -15,15 +16,13 @@ class LodgersController < ApplicationController
   # GET /lodgers/1
   # GET /lodgers/1.json
   def show
-    @users = User.all
-    authorize @users
+  
   end
 
   # GET /lodgers/new
   def new
     @users = User.all
     authorize @users
-
     @lodger = Lodger.new
     @lodger.build_address
   end
@@ -74,7 +73,6 @@ class LodgersController < ApplicationController
   def destroy
     @users = User.all
     authorize @users
-
     @lodger.destroy
     respond_to do |format|
       format.html { redirect_to lodgers_url, notice: 'Lodger was successfully destroyed.' }

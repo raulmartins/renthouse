@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    flash[:notice] = "You are not authorized to perform this action."
+    flash[:notice] = "access denied."
     redirect_to(request.referrer || root_path)
   end
   

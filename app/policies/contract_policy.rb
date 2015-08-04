@@ -1,4 +1,4 @@
-class LodgerPolicy < ApplicationPolicy
+class ContractPolicy < ApplicationPolicy
 
 	def new?
 		user.admin?

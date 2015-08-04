@@ -1,5 +1,5 @@
-class LodgerPolicy < ApplicationPolicy
-
+class HousePolicy < ApplicationPolicy
+	
 	def new?
 		user.admin?
 	end
