@@ -1,15 +1,11 @@
 <p id="notice"><%= notice %></p>
-<h1>Welcome</h1>
-<%if user_signed_in?%>		
-		<ul>
-			<li><%=current_user.email%></li>
-			<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
-		</ul>
-			<p><%=link_to 'Register Lodger', lodgers_path %></p>
-			<p><%=link_to 'Register House', houses_path %></p>
-			<p><%= link_to 'Register Contract', contracts_path %></p>
-			<p><%= link_to 'Users', control_users_index_path %></p>
-<%else%>
+<%if user_signed_in?%>
+	<% if current_user.admin?%>
+	 	<%= render 'admin_index' %>
+		<%else%>	
+			<%= render 'normal_user_index' %>
+	<%end%>
+<%elsif%>
 	<ul>
 		<li><%=link_to "Register User", new_user_registration_path%></li>
 		<li><%=link_to "Login", user_session_path%></li>

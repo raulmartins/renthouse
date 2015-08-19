@@ -1,0 +1,9 @@
+	<h1>Welcome to Administrator Area</h1>
+		<ul>
+			<li><%=current_user.email%></li>
+			<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+		</ul>
+			<p><%=link_to 'Register Lodger', lodgers_path %></p>
+			<p><%=link_to 'Register House', houses_path %></p>
+			<p><%= link_to 'Register Contract', contracts_path %></p>
+			<p><%= link_to 'Users', control_users_index_path %></p>
