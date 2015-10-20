@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801034219) do
+ActiveRecord::Schema.define(version: 20150801032654) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(version: 20150801034219) do
     t.integer  "lodger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "house_id"
   end
 
-  add_index "addresses", ["house_id"], name: "index_addresses_on_house_id"
   add_index "addresses", ["lodger_id"], name: "index_addresses_on_lodger_id"
 
   create_table "contracts", force: :cascade do |t|
