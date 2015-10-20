@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :contracts
   resources :houses
-  resources :houses
-  resources :houses
-  resources :houses
+  resources :control_users
   root 'welcome#index'
   #get 'welcome/index'
 

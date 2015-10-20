@@ -14,8 +14,8 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
-        <td><%= link_to 'Edit', edit_user_registration_path %></td>
-         <td><%= button_to "Cancel my account", registration_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
+        <td><%= link_to 'Edit', edit_control_user_path(user) %></td>
+         <td><%= button_to "Cancel my account", control_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
